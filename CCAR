@@ -9,6 +9,8 @@
 #include <string>
 using namespace std;
 class CCAR {
+／＊＊建立一個類別叫ＣＣＡＲ＊／
+
 private:
 string nickname;
 protected:
@@ -16,6 +18,7 @@ int light;
 int wheel;
 public:
 CCAR() :light(2)
+／＊＊建構子＊／
 {
 wheel = 5;
 cout << "car's constructor(wheel=" << wheel << ")" << endl;
@@ -26,15 +29,18 @@ wheel = 5;
 this->nickname = nickname;
 cout << "car's constructor(nickname=" << nickname << ")" << endl;
 }
-~CCAR()
+~CCAR(）
+／＊＊解構子＊／
 {
 cout << "car's destructor" << "(" << nickname << ")" << endl;
 }
 void start()
+／＊＊成員函式＊／
 {
 cout << "car's start" << endl;
 }
 void stop()
+／＊＊成員函式＊／
 {
 cout << "car's stop" << endl;
 }
@@ -45,14 +51,17 @@ cout << "car's turn" << endl;
 };
 //--------------------------
 class CBMW : public CCAR {
+／＊＊繼承＊／
 public:
 CBMW() { light = 4; wheel = 4; cout << "bmw's constructor" << endl; }
 ~CBMW() { cout << "bmw's destructor" << endl; }
 void Abs()
+／＊＊增加新功能＊／
 {
 cout << "bmw's abs" << endl;
 }
-void start()
+void start(）
+／＊＊修改舊功能＊／
 {
 cout << "bmw's start" << endl;
 CCAR::start();//scope operator
